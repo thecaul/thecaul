@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Client Intake — The Caul</title>
+<meta name="description" content="Before your Discovery Call. A private form to help Joshua arrive prepared."/>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;1,300;1,400;1,500&display=swap" rel="stylesheet"/>
+<style>
+* { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+
+:root {
+  --void: #1A1A17;
+  --void-mid: #222220;
+  --void-card: #2A2A26;
+  --bone: #F2EDE4;
+  --ember: #A8471A;
+  --gold: #C49A3C;
+  --text-bright: #F2EDE4;
+  --text-body: #DDD8CE;
+  --text-muted: #B0AA9E;
+}
+
+body { background: var(--void); color: var(--text-bright); font-family: 'Cormorant Garamond', serif; font-weight: 300; font-size: 18px; line-height: 1.85; overflow-x: hidden; cursor: none; }
+a { text-decoration: none; color: inherit; cursor: none; }
+
+#cursor { position: fixed; width: 10px; height: 10px; background: #A8471A; border-radius: 50%; pointer-events: none; z-index: 9999; transform: translate(-50%,-50%); }
+#cursor-ring { position: fixed; width: 36px; height: 36px; border: 1px solid #A8471A; border-radius: 50%; pointer-events: none; z-index: 9998; opacity: 0.4; transform: translate(-50%,-50%); }
+
+#site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; padding: 20px 48px 16px; background: #0E0E0C; border-bottom: 1px solid rgba(242,237,228,0.06); }
+.nav-logo-img { height: 64px; width: auto; display: block; }
+.nav-back { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-muted); margin-top: 10px; transition: color 0.3s; }
+.nav-back:hover { color: var(--ember); }
+
+.page-wrap { max-width: 720px; margin: 0 auto; padding: 180px 48px 120px; }
+
+.intake-eyebrow { font-size: 12px; letter-spacing: 0.35em; text-transform: uppercase; color: var(--ember); margin-bottom: 16px; }
+.intake-title { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 0.95; color: var(--text-bright); margin-bottom: 32px; }
+.intake-intro { font-size: 18px; font-style: italic; color: var(--text-body); line-height: 1.85; max-width: 580px; margin-bottom: 64px; border-left: 2px solid rgba(168,71,26,0.4); padding-left: 24px; }
+
+.section-mark { font-family: 'Bebas Neue', sans-serif; font-size: 12px; letter-spacing: 0.28em; color: var(--ember); text-transform: uppercase; margin-bottom: 28px; padding-bottom: 12px; border-bottom: 1px solid rgba(242,237,228,0.08); }
+
+.field-group { margin-bottom: 36px; }
+.field-row { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 36px; }
+.field-label { display: block; font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); margin-bottom: 10px; font-weight: 400; }
+.field-label .req { color: var(--ember); margin-left: 3px; }
+.field-hint { font-size: 14px; font-style: italic; color: var(--text-muted); margin-bottom: 10px; display: block; line-height: 1.65; }
+
+.f-input, .f-textarea {
+  width: 100%;
+  background: var(--void-card);
+  border: 1px solid rgba(242,237,228,0.08);
+  border-bottom: 1px solid rgba(242,237,228,0.2);
+  color: var(--text-bright);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 17px;
+  font-weight: 300;
+  padding: 14px 16px;
+  outline: none;
+  transition: border-color 0.3s, background 0.3s;
+  -webkit-appearance: none;
+  border-radius: 0;
+}
+.f-input:focus, .f-textarea:focus { border-color: rgba(168,71,26,0.6); background: #2E2E2A; }
+.f-input::placeholder, .f-textarea::placeholder { color: var(--text-muted); font-style: italic; }
+.f-textarea { resize: vertical; min-height: 100px; line-height: 1.7; }
+.f-textarea.tall { min-height: 130px; }
+
+.choice-group { display: flex; flex-direction: column; gap: 14px; }
+.choice-item { display: flex; align-items: flex-start; gap: 14px; cursor: pointer; }
+.choice-item input[type="radio"],
+.choice-item input[type="checkbox"] { margin-top: 5px; width: 14px; height: 14px; accent-color: var(--ember); flex-shrink: 0; cursor: pointer; }
+.choice-text { font-size: 17px; color: var(--text-body); line-height: 1.6; font-style: italic; }
+
+.section-divider { border: none; border-top: 1px solid rgba(242,237,228,0.06); margin: 56px 0; }
+
+.policy-box { background: var(--void-card); border-left: 2px solid var(--ember); padding: 32px 36px; margin-bottom: 16px; }
+.policy-box-gold { background: var(--void-card); border-left: 2px solid var(--gold); padding: 32px 36px; margin-bottom: 28px; }
+.policy-sublabel { font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.22em; color: var(--ember); display: block; margin-bottom: 10px; }
+.policy-sublabel-gold { font-family: 'Bebas Neue', sans-serif; font-size: 11px; letter-spacing: 0.22em; color: var(--gold); display: block; margin-bottom: 10px; }
+.policy-text { font-size: 16px; color: var(--text-body); line-height: 1.9; font-style: italic; }
+.policy-rule { border: none; border-top: 1px solid rgba(242,237,228,0.06); margin: 20px 0; }
+
+.consent-item { display: flex; align-items: flex-start; gap: 14px; cursor: pointer; margin-bottom: 48px; }
+.consent-item input[type="checkbox"] { margin-top: 5px; width: 15px; height: 15px; accent-color: var(--ember); flex-shrink: 0; cursor: pointer; }
+.consent-text { font-size: 16px; color: var(--text-body); line-height: 1.7; font-style: italic; }
+.consent-text .req { color: var(--ember); }
+
+.f-submit { width: 100%; padding: 20px; font-family: 'Bebas Neue', sans-serif; font-size: 18px; letter-spacing: 0.28em; background: transparent; border: 1px solid rgba(242,237,228,0.3); color: var(--text-bright); cursor: none; transition: border-color 0.3s, color 0.3s; text-transform: uppercase; }
+.f-submit:hover { border-color: var(--ember); color: var(--ember); }
+
+.confirm-wrap { display: none; text-align: center; padding: 80px 0; }
+.confirm-title { font-family: 'Bebas Neue', sans-serif; font-size: 56px; color: var(--text-bright); margin-bottom: 24px; }
+.confirm-text { font-size: 19px; font-style: italic; color: var(--text-body); line-height: 1.9; }
+.confirm-divider { width: 40px; height: 1px; background: var(--ember); margin: 32px auto; }
+
+footer { border-top: 1px solid rgba(242,237,228,0.06); padding: 40px 48px; text-align: center; }
+.footer-legal { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-muted); }
+
+@media (max-width: 640px) {
+  .page-wrap { padding: 160px 24px 80px; }
+  .intake-title { font-size: 44px; }
+  .field-row { grid-template-columns: 1fr; gap: 0; }
+  .policy-box, .policy-box-gold { padding: 24px 20px; }
+  #site-nav { padding: 16px 24px 12px; }
+}
+</style>
+</head>
+<body>
+
+<div id="cursor"></div>
+<div id="cursor-ring"></div>
+
+<nav id="site-nav">
+  <a href="https://thecaul.com">
+    <img src="https://i.imgur.com/bhQQadO.png" alt="The Caul" class="nav-logo-img"/>
+  </a>
+  <a href="https://thecaul.com" class="nav-back">Return to thecaul.com</a>
+</nav>
+
+<div class="page-wrap">
+
+  <div id="intake-form-wrap">
+    <p class="intake-eyebrow">Before Your Discovery Call</p>
+    <h1 class="intake-title">Client Intake</h1>
+    <p class="intake-intro">This form is private. What you share here helps me arrive prepared and it will not be used to diagnose, define, or limit you. There are no wrong answers. Write as much or as little as feels right.</p>
+
+    <!--
+      SETUP: Replace YOUR_FORM_ID below with your Formspree endpoint.
+      1. Go to formspree.io and sign up with <span class="email-link" style="cursor:pointer;"></span>
+      2. Create a new form, name it "Client Intake"
+      3. Your endpoint will look like: https://formspree.io/f/abcdefgh
+      4. Paste it into the action attribute below
+    -->
+    <form id="intake-form" action="https://formspree.io/f/mwvwajry" method="POST" novalidate>
+
+      <p class="section-mark">You</p>
+
+      <div class="field-row">
+        <div>
+          <label class="field-label" for="f-name">Name <span class="req">*</span></label>
+          <input class="f-input" type="text" id="f-name" name="name" placeholder="What you go by" autocomplete="given-name">
+        </div>
+        <div>
+          <label class="field-label" for="f-pronouns">Pronouns</label>
+          <input class="f-input" type="text" id="f-pronouns" name="pronouns" placeholder="Optional">
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="f-email">Email <span class="req">*</span></label>
+        <input class="f-input" type="email" id="f-email" name="email" placeholder="Where I can reach you" autocomplete="email">
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">What is bringing you here</p>
+
+      <div class="field-group">
+        <label class="field-label" for="f-alive">What is alive in you right now? <span class="req">*</span></label>
+        <span class="field-hint">A transition, a question, a weight you have been carrying. Whatever word comes first.</span>
+        <textarea class="f-textarea tall" id="f-alive" name="what_is_alive" placeholder="Write freely."></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="f-hoping">What are you hoping for, or open to?</label>
+        <span class="field-hint">Not a goal. Just what you sense might be possible.</span>
+        <textarea class="f-textarea" id="f-hoping" name="hoping_for" placeholder="No need to be certain."></textarea>
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">Your experience</p>
+
+      <div class="field-group">
+        <label class="field-label">Previous experience with energy work, somatic practice, or journey work</label>
+        <div class="choice-group">
+          <label class="choice-item">
+            <input type="radio" name="experience_level" value="none">
+            <span class="choice-text">None. This is new territory.</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="experience_level" value="some">
+            <span class="choice-text">Some. I have explored but not gone deep.</span>
+          </label>
+          <label class="choice-item">
+            <input type="radio" name="experience_level" value="significant">
+            <span class="choice-text">Significant. This is familiar ground.</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="f-history">Anything about your history worth knowing before we meet?</label>
+        <span class="field-hint">Trauma, recent loss, ongoing mental health support. Share only what feels relevant. You do not owe me your whole story here.</span>
+        <textarea class="f-textarea" id="f-history" name="relevant_history" placeholder="Optional. I will hold what you share with care."></textarea>
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">Physical and medical</p>
+
+      <div class="field-group">
+        <label class="field-label" for="f-physical">Are there any physical conditions I should be aware of?</label>
+        <span class="field-hint">This helps me work with you safely. Includes chronic illness, sensitivity to certain practices, or anything affecting how you hold a session.</span>
+        <textarea class="f-textarea" id="f-physical" name="physical_conditions" placeholder="Optional."></textarea>
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">Boundaries and preferences</p>
+
+      <div class="field-group">
+        <label class="field-label" for="f-limits">Is there anything you would prefer we not go toward, or are not ready for yet?</label>
+        <span class="field-hint">Lineage, a specific wound, certain kinds of imagery. You set the edges.</span>
+        <textarea class="f-textarea" id="f-limits" name="boundaries" placeholder="Your boundaries are information, not obstacles."></textarea>
+      </div>
+
+      <div class="field-group">
+        <label class="field-label" for="f-safety">What tends to help you feel safe in a held space?</label>
+        <span class="field-hint">Pacing, silence, check-ins, full disclosure of what is happening. Whatever helps you arrive.</span>
+        <textarea class="f-textarea" id="f-safety" name="what_helps" placeholder="Optional."></textarea>
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">How you found The Caul</p>
+
+      <div class="field-group">
+        <label class="field-label">How did you find your way here?</label>
+        <div class="choice-group">
+          <label class="choice-item"><input type="checkbox" name="source" value="referral"> <span class="choice-text">Word of mouth or personal referral</span></label>
+          <label class="choice-item"><input type="checkbox" name="source" value="instagram"> <span class="choice-text">Instagram (@thecaul_)</span></label>
+          <label class="choice-item"><input type="checkbox" name="source" value="newsletter"> <span class="choice-text">The Letters (newsletter)</span></label>
+          <label class="choice-item"><input type="checkbox" name="source" value="circle"> <span class="choice-text">Sacred Masculine Circle</span></label>
+          <label class="choice-item"><input type="checkbox" name="source" value="event"> <span class="choice-text">An event or gathering</span></label>
+          <label class="choice-item"><input type="checkbox" name="source" value="search"> <span class="choice-text">Search or directory</span></label>
+          <label class="choice-item"><input type="checkbox" name="source" value="other"> <span class="choice-text">Other</span></label>
+        </div>
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">Confidentiality</p>
+
+      <div class="policy-box">
+        <span class="policy-sublabel">What I hold</span>
+        <p class="policy-text">Everything you share in this form, in session, and in any communication between us is held in confidence. I do not share your name, your story, or what moves through our work together with anyone. Your process is yours.</p>
+        <hr class="policy-rule">
+        <span class="policy-sublabel">What I ask of you</span>
+        <p class="policy-text">The container we build together depends on mutual care. What I share about my practices and the way I work is offered in trust. I ask that you treat it accordingly and not reproduce or forward it without my consent.</p>
+        <hr class="policy-rule">
+        <span class="policy-sublabel">The one exception</span>
+        <p class="policy-text">Confidentiality has one limit. If you share something that leads me to believe there is imminent risk of harm to yourself or another, I may need to act on that. I will always try to speak with you directly first. This is not a clause I invoke lightly. It is simply the edge of the container, named honestly.</p>
+      </div>
+
+      <hr class="section-divider">
+
+      <p class="section-mark">Consent</p>
+
+      <div class="policy-box-gold">
+        <span class="policy-sublabel-gold">The nature of this work</span>
+        <p class="policy-text">The work we do together is facilitated, not prescribed. I am not a licensed therapist or physician. What happens in session is an invitation and you are always in choice. By submitting this form you confirm you are entering of your own will, and that you understand the nature of this work as a facilitated practice of your own unfolding.</p>
+      </div>
+
+      <label class="consent-item">
+        <input type="checkbox" id="f-consent" name="consent" value="agreed">
+        <span class="consent-text">I have read the above and consent to this process. <span class="req">*</span></span>
+      </label>
+
+      <button type="submit" class="f-submit">Send This Forward</button>
+
+    </form>
+  </div>
+
+  <div class="confirm-wrap" id="confirm-wrap">
+    <div class="confirm-divider"></div>
+    <p class="confirm-title">Received.</p>
+    <p class="confirm-text">I will hold what you have shared before we meet.<br>See you at the threshold.</p>
+    <div class="confirm-divider"></div>
+    <p style="font-size:14px; letter-spacing:0.2em; text-transform:uppercase; color:var(--text-muted); margin-top:48px;">
+      <a href="https://thecaul.com" style="color:var(--ember);">Return to thecaul.com</a>
+    </p>
+  </div>
+
+</div>
+
+<footer>
+  <p class="footer-legal">&copy; 2026 The Caul &mdash; Richmond, Virginia</p>
+</footer>
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+
+    // CURSOR
+    const cur = document.getElementById('cursor');
+    const ring = document.getElementById('cursor-ring');
+    let mx = 0, my = 0, rx = 0, ry = 0;
+    document.addEventListener('mousemove', function(e) {
+      mx = e.clientX; my = e.clientY;
+      cur.style.left = mx + 'px';
+      cur.style.top = my + 'px';
+    });
+    (function tick() {
+      rx += (mx - rx) * 0.1;
+      ry += (my - ry) * 0.1;
+      ring.style.left = rx + 'px';
+      ring.style.top = ry + 'px';
+      requestAnimationFrame(tick);
+    })();
+
+    // FORM
+    const form = document.getElementById('intake-form');
+    if (!form) return;
+    form.addEventListener('submit', async function(e) {
+      e.preventDefault();
+      const name = document.getElementById('f-name').value.trim();
+      const email = document.getElementById('f-email').value.trim();
+      const alive = document.getElementById('f-alive').value.trim();
+      const consent = document.getElementById('f-consent').checked;
+      if (!name || !email || !alive || !consent) {
+        alert('Please complete the required fields and confirm consent before sending.');
+        return;
+      }
+      const btn = form.querySelector('.f-submit');
+      btn.textContent = 'Sending...';
+      btn.style.opacity = '0.6';
+      try {
+        const res = await fetch(form.action, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { 'Accept': 'application/json' }
+        });
+        if (res.ok) {
+          document.getElementById('intake-form-wrap').style.display = 'none';
+          document.getElementById('confirm-wrap').style.display = 'block';
+          window.scrollTo({ top: 0, behavior: 'smooth' });
+        } else {
+          btn.textContent = 'Something went wrong. Try again.';
+          btn.style.opacity = '1';
+          btn.style.color = '#A8471A';
+        }
+      } catch (err) {
+        btn.textContent = 'Something went wrong. Try again.';
+        btn.style.opacity = '1';
+        btn.style.color = '#A8471A';
+      }
+    });
+
+  });
+</script>
+
+<script>
+document.querySelectorAll('.email-link').forEach(function(el){
+  el.innerText = 'hello@thecaul.com';
+  el.onclick = function(){
+    window.location.href = 'mailto:hello@thecaul.com';
+  };
+});
+</script>
+
+</body>
+</html>
