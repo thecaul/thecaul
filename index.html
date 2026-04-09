@@ -352,12 +352,15 @@ div[class*="calendly"] {
   background: transparent !important;
 }/* 🔥 FINAL FIX */
 form,
-form *,
+*
 .f-group,
 .retreat-block,
-.retreat-block * {
+*
   background: transparent !important;
   box-shadow: none !important;
+}/* 🎯 TARGET THE EXACT BLOCK */
+.retreat-block > div {
+  background: transparent !important;
 }
 </style>
 </head>
