@@ -132,9 +132,27 @@
   button { font-family: 'Cormorant Garamond', serif; }
 
   /* NAV */
-  #site-nav { position: fixed; top: 0; left: 0; right: 0; z-index: 1000; display: flex; flex-direction: column; align-items: center; padding: 20px 48px 16px; background: #0E0E0C; border-bottom: 1px solid rgba(242,237,228,0.06); transition: background 0.4s ease; }
+  #site-nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  padding-top: 20px;
+}
   #site-nav.scrolled { background: #0E0E0C; border-bottom: 1px solid rgba(242,237,228,0.08); }
-  .nav-logo-img { height: 72px; width: auto; display: block; }
+  .nav-logo-img {
+  height: 42px;
+  width: auto;
+  display: block;
+  margin-bottom: 10px;
+}
   .nav-links { display: flex; gap: 48px; list-style: none; margin-top: 12px; flex-wrap: wrap; justify-content: center; }
   .nav-links a, .nav-links button { font-size: 13px; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-body); background: none; border: none; padding: 0; transition: color 0.3s; }
   .nav-links a:hover, .nav-links button:hover { color: var(--ember); }
@@ -800,21 +818,20 @@ A discovery call is specifically for new clients. Those who have already begun t
      <div style="margin-top:32px; background:transparent;">
         <p class="eyebrow reveal">The Doorway</p>
        <h2 class="section-title reveal">Ready to Begin</h2>
-        <p class="reveal">
-This is where the work begins.
-A guided conversation to understand what you're moving through—and find the right place to begin.
-</p> color:var(--text-body); max-width:400px; line-height:1.8;">This is the first step into the work. A conversation to feel what’s here and find the right place to begin.</p>
-       <p class="reveal" style="font-size:14px; margin-bottom:20px;">
-Trusted by individuals navigating transition, integration, and personal transformation.
+<p class="reveal" style="font-size:20px; font-style:italic; color:var(--text-body); max-width:400px; line-height:1.8;">
+This is where the work begins. A guided conversation to understand what you're moving through—and find the right place to begin.
 </p>
         <div class="begin-actions reveal">
           <button class="begin-action-btn" onclick="openCalendly('https://calendly.com/joshua-the-caul/30min')">
  Begin the Work →
 </button>
-          <p style="font-size:14px; margin-top:10px; color:var(--text-muted);">
+         <p style="font-size:14px; margin-top:10px; color:var(--text-muted);">
 Book your first conversation
-</p><p style="font-size:13px; margin-top:6px; opacity:0.7;">
+</p>
+
+<p style="font-size:13px; margin-top:6px; opacity:0.7;">
 Limited weekly availability
+</p>
 </p>
 </div>
         </div>
