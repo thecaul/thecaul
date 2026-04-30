@@ -160,7 +160,7 @@
   /* SECTIONS */
   section { padding: 140px 0; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-  ...eyebrow {
+  .eyebrow {
   font-size: 13px;
   letter-spacing: 0.18em;
   text-transform: uppercase;
@@ -357,13 +357,7 @@
     .about-left { position: static; }
     .how-grid, .sessions-grid, .voices-grid { grid-template-columns: 1fr; }
     .how-grid::before { display: none; }
-    ..section-title {
-  font-family: 'Bebas Neue', sans-serif;
-  font-size: 80px;
-  line-height: 0.95;
-  color: var(--text-bright);
-  margin-bottom: 20px;
-}
+    
     .footer-inner { grid-template-columns: 1fr; gap: 40px; }
     .hero-logo { width: 280px; }
     body { font-size: 18px; }
@@ -764,12 +758,12 @@ A discovery call is specifically for new clients. Those who have already begun t
 </section>
 
 <!-- THE CIRCLE -->
-<section id="circle">
+<h2 class="section-title reveal">THE CIRCLE</h2>
   <div class="container">
     <div class="circle-grid">
       <div class="circle-body">
         <p class="eyebrow reveal" style="color:#A8471A;">The Circle</p>
-<h2 class="section-title reveal">
+
         <p class="reveal">There is a threshold most men never cross. Not because they lack the courage. Because no one ever held the door open for them.</p>
         <p class="reveal">This is that door.</p>
         <p class="reveal">Built by a queer man. Held for queer men, queer adjacent men, and any man who feels like the boxes were never built for him.</p>
@@ -911,9 +905,7 @@ Limited weekly availability
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
-        var siblings = Array.from(entry.target.parentElement.querySelectorAll('..reveal {
-  max-width: 520px;
-}'));
+        var siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
         setTimeout(function(){ entry.target.classList.add('visible'); }, siblings.indexOf(entry.target) * 80);
         io.unobserve(entry.target);
       }
