@@ -506,8 +506,7 @@ form,
 </style>
 </head>
 <body>
-<div id="cursor"></div>
-<div id="cursor-ring"></div>
+
 
 
 
@@ -544,7 +543,7 @@ form,
 </div>
 
 <!-- NAV -->
-<img src="thecaul/CAUL.PNG" alt="The Caul" class="nav-logo-img" loading="lazy"/>
+
   <ul class="nav-links">
   <li><a href="#about">About</a></li>
   <li><a href="#offerings">The Offerings</a></li>
@@ -891,26 +890,7 @@ Limited weekly availability
 <script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 <script src="https://assets.flodesk.com/universal.js" async></script>
 <script>
-  // CURSOR
-  (function(){
-    var dot = document.getElementById('cursor');
-    var ring = document.getElementById('cursor-ring');
-    if(!dot || !ring) return;
-    var rx=0, ry=0, mx=0, my=0;
-    document.addEventListener('mousemove', function(e){
-      mx = e.clientX; my = e.clientY;
-      dot.style.left = (mx - 6) + 'px';
-      dot.style.top = (my - 6) + 'px';
-    });
-    function animateRing(){
-      rx += (mx - rx) * 0.12;
-      ry += (my - ry) * 0.12;
-      ring.style.left = (rx - 20) + 'px';
-      ring.style.top = (ry - 20) + 'px';
-      requestAnimationFrame(animateRing);
-    }
-    animateRing();
-  })();
+ 
 
   // NAV
   var nav = document.getElementById('site-nav');
