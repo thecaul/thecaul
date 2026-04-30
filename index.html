@@ -121,7 +121,7 @@
     --void-mid: #222220;
     --void-card: #2A2A26;
     --bone: #F2EDE4;
-    --ember: #A8471A;
+--ember: #C15A2E;
     --gold: #C49A3C;
     --text-bright: #F2EDE4;
     --text-body: #DDD8CE;
@@ -143,13 +143,13 @@
   /* SECTIONS */
   section { padding: 120px 0; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
-  ..eyebrow {
-  font-size: 12px;
-  letter-spacing: 0.35em;
+  ...eyebrow {
+  font-size: 13px;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
   color: #F2EDE4;
   font-weight: 600;
-  margin-bottom: 16px;
+  margin-bottom: 12px;
 }
   .section-title { font-family: 'Bebas Neue', sans-serif; font-size: 80px; line-height: 0.95; color: var(--text-bright); }
   .divider { width: 40px; height: 1px; background: var(--ember); margin: 40px 0; }
@@ -268,7 +268,7 @@
   transition: all 0.25s ease;
 }
   .begin-action-btn:hover {
-  background: #c35a2b;
+  background: #C15A2E;
   color: #F2EDE4;
 }
   .begin-contact-info { display: flex; flex-direction: column; gap: 20px; margin-top: 40px; }
@@ -329,7 +329,13 @@
     .about-left { position: static; }
     .how-grid, .sessions-grid, .voices-grid { grid-template-columns: 1fr; }
     .how-grid::before { display: none; }
-    .section-title { font-size: 56px; }
+    ..section-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 80px;
+  line-height: 0.95;
+  color: var(--text-bright);
+  margin-bottom: 20px;
+}
     .footer-inner { grid-template-columns: 1fr; gap: 40px; }
     .hero-logo { width: 280px; }
     body { font-size: 18px; }
