@@ -280,9 +280,10 @@
 }
 
 .voice-card p:first-of-type {
-  font-size: 16px;
-  color: rgba(242, 237, 228, 0.85);
-  margin-bottom: 12px;
+  font-size: 18px;
+  color: var(--bone);
+  opacity: 0.9;
+  letter-spacing: 0.04em;
 }
  .voice-card.featured .voice-name {
   color: rgba(242,237,228,0.9);
@@ -296,15 +297,22 @@
 }
   .circle-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .circle-body p {
-  font-size: 19px;
+  font-size: 20px;
   line-height: 1.9;
   color: var(--bone);
 }
   .circle-form-wrap { background: var(--void); padding: 48px; }
-  .circle-form-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--text-bright); margin-bottom: 8px; }
-  .circle-form-sub { font-size: 17px; font-style: normal; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7; }
+ .circle-form-title {
+  font-family: 'Bebas Neue', sans-serif;
+  font-size: 36px;
+  color: var(--bone);
+}
 
-  /* NEWSLETTER */
+.circle-form-sub {
+  font-size: 18px;
+  color: var(--bone);
+  opacity: 0.85;
+}
   #newsletter { background: var(--void-mid); }
   .newsletter-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .newsletter-body p { font-size: 19px; line-height: 1.9; color: var(--text-body); margin-bottom: 24px; }
@@ -344,7 +352,7 @@
 
   /* FORMS */
   .f-group { display: flex; flex-direction: column; gap: 8px; margin-bottom: 24px; }
-  .f-lbl { font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--text-muted); }
+  .f-lbl { font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--bone)); }
   .f-inp, .f-sel, .f-txt { background: transparent; border: none; border-bottom: 1px solid rgba(242,237,228,0.2); padding: 12px 0; font-family: 'Cormorant Garamond', serif; font-size: 18px; color: var(--text-bright); outline: none; transition: border-color 0.3s; width: 100%; }
   .f-inp:focus, .f-sel:focus, .f-txt:focus { border-color: var(--ember); }
   .f-inp::placeholder, .f-txt::placeholder { color: rgba(242,237,228,0.25); }
@@ -364,7 +372,7 @@
   .booking-list { display: flex; flex-direction: column; gap: 8px; }
   .booking-item { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 20px 24px; background: var(--void); }
   .booking-name { font-size: 18px; color: var(--text-bright); font-weight: 400; }
-  .booking-dur { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--text-muted); margin-top: 4px; }
+  .booking-dur { font-size: 12px; letter-spacing: 0.15em; text-transform: uppercase; color: var(--bone); margin-top: 4px; }
   .booking-btn { font-size: 12px; letter-spacing: 0.22em; text-transform: uppercase; background: var(--ember); color: var(--text-bright); padding: 12px 22px; border: none; white-space: nowrap; transition: background 0.3s; flex-shrink: 0; }
   .booking-btn:hover { background: var(--gold); }
 
@@ -372,10 +380,10 @@
   footer { background: var(--void); border-top: 1px solid rgba(242,237,228,0.08); padding: 64px 0 40px; }
   .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 64px; margin-bottom: 48px; }
   .footer-logo { height: 80px; width: auto; display: block; margin-bottom: 20px; opacity: 0.9; }
-  .footer-tagline { font-size: 15px; font-style: normal; color: var(--text-muted); line-height: 1.8; }
+  .footer-tagline { font-size: 15px; font-style: normal; color: var(--bone); line-height: 1.8; }
   .footer-col-title { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
   .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
-  .footer-links a, .footer-links button { font-size: 16px; color: var(--text-muted); background: none; border: none; padding: 0; text-align: left; transition: color 0.3s; }
+  .footer-links a, .footer-links button { font-size: 16px; color: var(--bone); background: none; border: none; padding: 0; text-align: left; transition: color 0.3s; }
   .footer-links a:hover, .footer-links button:hover { color: var(--ember); }
   .footer-bottom { max-width: 1100px; margin: 0 auto; padding: 24px 48px 0; border-top: 1px solid rgba(242,237,228,0.06); display: flex; justify-content: space-between; align-items: center; }
   .footer-legal { font-size: 13px; color: rgba(242,237,228,0.3); letter-spacing: 0.08em; }
@@ -465,9 +473,10 @@ form,
 
 /* Eyebrow text (section labels like "The Offerings") */
 .eyebrow {
-  color: #F2EDE4 !important;
-  font-weight: 500;
-  letter-spacing: 0.28em;
+  font-size: 15px;
+  color: var(--bone);
+  opacity: 0.8;
+  letter-spacing: 0.08em;
 }
 
 /* Step number circles (01, 02, etc) */
@@ -812,7 +821,7 @@ A discovery call is specifically for new clients. Those who have already begun t
           <p class="circle-form-title">EXPRESS INTEREST</p>
           <p class="circle-form-sub">Let me know you are called. I will reach out when the next circle opens.</p>
           <div id="fd-circle-root"></div>
-          <p style="margin-top:20px; font-size:15px; font-style:italic; color:var(--text-muted); text-align:center;">Or <a href="https://jcampbell.myflodesk.com/circle" target="_blank" style="color:#A8471A; border-bottom:1px solid rgba(168,71,26,0.4);">register directly here</a></p>
+          <p style="margin-top:20px; font-size:15px; font-style:italic; color:var(--bone); text-align:center;">Or <a href="https://jcampbell.myflodesk.com/circle" target="_blank" style="color:#A8471A; border-bottom:1px solid rgba(168,71,26,0.4);">register directly here</a></p>
         </div>
       </div>
     </div>
@@ -837,9 +846,9 @@ A discovery call is specifically for new clients. Those who have already begun t
       <div class="reveal" style="padding-top:80px;">
         <div style="background:var(--void); padding:48px; border-top:2px solid var(--ember);">
           <p class="section-title">
-          <p style="font-size:16px; font-style:italic; color:var(--text-muted); margin-bottom:32px;">Join the letters. Leave when you want. No noise.</p>
+          <p style="font-size:16px; font-style:italic; color:var(--bone); margin-bottom:32px;">Join the letters. Leave when you want. No noise.</p>
           <div id="fd-newsletter-root"></div>
-          <p style="margin-top:20px; font-size:15px; font-style:italic; color:var(--text-muted); text-align:center;">Or <a href="https://jcampbell.myflodesk.com/thecaul" target="_blank" style="color:#A8471A; border-bottom:1px solid rgba(168,71,26,0.4);">sign up directly here</a></p>
+          <p style="margin-top:20px; font-size:15px; font-style:italic; color:var(--bone); text-align:center;">Or <a href="https://jcampbell.myflodesk.com/thecaul" target="_blank" style="color:#A8471A; border-bottom:1px solid rgba(168,71,26,0.4);">sign up directly here</a></p>
         </div>
       </div>
     </div>
@@ -861,7 +870,7 @@ This is where the work begins. A guided conversation to understand what you're m
           <button class="begin-action-btn" onclick="openCalendly('https://calendly.com/joshua-the-caul/30min')">
  Begin the Work →
 </button>
-         <p style="font-size:14px; margin-top:10px; color:var(--text-muted);">
+         <p style="font-size:14px; margin-top:10px; color:var(--bone);">
 Book your first conversation
 </p>
 
