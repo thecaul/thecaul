@@ -236,7 +236,7 @@
   .session-for { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; line-height: 1.5; }
   .session-desc { font-size: 17px; color: var(--text-body); line-height: 1.85; margin-bottom: 18px; }
   .session-outcomes { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; font-style: normal; }
-  .session-book { font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); background: none; border: none; padding: 0; transition: color 0.3s; }
+  .session-book { font-size: 16px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); background: none; border: none; padding: 0; transition: color 0.3s; }
   .session-book:hover { color: var(--ember); }
 
   /* VOICE IN OFFERINGS */
@@ -535,6 +535,40 @@ form,
 
 .retreat-title {
   margin-top: 50px;
+}
+  /* 🔥 GLOBAL VOICE CARD FIX (FINAL OVERRIDE) */
+
+.voice-card,
+.voice-card.featured {
+  color: #F2EDE4 !important;
+}
+
+/* all paragraph text */
+.voice-card p {
+  font-size: 18px !important;
+  line-height: 1.7 !important;
+  color: #F2EDE4 !important;
+  opacity: 1 !important;
+}
+
+/* gold / intro line */
+.voice-card p:first-of-type {
+  font-size: 18px !important;
+  color: #E6C27A !important;
+  letter-spacing: 0.03em !important;
+  opacity: 1 !important;
+}
+
+/* main body text */
+.voice-card .voice-text {
+  font-size: 19px !important;
+  line-height: 1.8 !important;
+  color: #F2EDE4 !important;
+}
+
+/* kill faint quote styling */
+.quote-mark {
+  opacity: 0.15 !important;
 }
 </style>
 </head>
