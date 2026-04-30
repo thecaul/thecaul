@@ -168,22 +168,28 @@
   font-weight: 600;
   margin-bottom: 12px;
 }
-  .section-title {
+.section-title {
   font-family: 'Bebas Neue', sans-serif;
   font-size: 72px;
   line-height: 0.95;
   letter-spacing: 0.02em;
   text-transform: uppercase;
   color: var(--text-bright);
+  margin-bottom: 16px;
 }
   .intro-text {
   max-width: 520px;
-  margin-top: 16px;
+  margin-top: 12px;
+  margin-bottom: 8px;
 }
   .divider { width: 40px; height: 1px; background: var(--ember); margin: 40px 0; }
 
   /* REVEAL */
-  .reveal { opacity: 1; transform: none; }
+  .reveal {
+  opacity: 1;
+  transform: none;
+  max-width: 520px;
+}
   .reveal.visible { opacity: 1; transform: translateY(0); }
 
   /* HERO — darkest black */
@@ -356,7 +362,7 @@
     .nav-links { gap: 20px; }
     .nav-logo-img { height: 52px; }
     .container { padding: 0 24px; }
-    section { padding: 80px 0; }
+   section { padding: 120px 0; }
     .about-grid, .circle-grid, .newsletter-grid, .begin-grid, .pricing-tables { grid-template-columns: 1fr; gap: 40px; }
     .about-left { position: static; }
     .how-grid, .sessions-grid, .voices-grid { grid-template-columns: 1fr; }
