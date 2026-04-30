@@ -111,9 +111,6 @@
 
   #cursor { position: fixed; width: 12px; height: 12px; background: #A8471A; border-radius: 50%; pointer-events: none; z-index: 99999; left: -100px; top: -100px; }
   #cursor-ring { position: fixed; width: 40px; height: 40px; border: 2px solid #A8471A; border-radius: 50%; pointer-events: none; z-index: 99998; opacity: 0.8; left: -100px; top: -100px; }
-  body { cursor: none; }
-  a { cursor: none; }
-  button { cursor: none; }
   html { scroll-behavior: smooth; scroll-padding-top: 120px; }
 
   :root {
@@ -141,7 +138,7 @@
   .nav-links a:hover, .nav-links button:hover { color: var(--ember); }
 
   /* SECTIONS */
-  section { padding: 120px 0; }
+  section { padding: 140px 0; }
   .container { max-width: 1100px; margin: 0 auto; padding: 0 48px; }
   ...eyebrow {
   font-size: 13px;
@@ -161,7 +158,7 @@
   /* HERO — darkest black */
   #hero { min-height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center; text-align: center; padding: 160px 48px 80px; position: relative; background: #0E0E0C; }
   .hero-logo { width: 420px; height: auto; margin-bottom: 48px; }
-  .hero-tagline { font-size: 24px; font-style: italic; font-weight: 300; color: rgba(242,237,228,0.7); max-width: 480px; line-height: 1.7; margin-bottom: 56px; }
+  .hero-tagline { font-size: 24px; font-style: normal; font-weight: 300; color: rgba(242,237,228,0.7); max-width: 480px; line-height: 1.7; margin-bottom: 56px; }
   .btn-primary { font-size: 13px; letter-spacing: 0.25em; text-transform: uppercase; background: transparent; color: #F2EDE4; padding: 16px 48px; border: 1px solid rgba(242,237,228,0.4); display: inline-block; transition: border-color 0.3s, color 0.3s; }
   .btn-primary:hover { border-color: var(--ember); color: var(--ember); }
 
@@ -170,7 +167,7 @@
   .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
   .about-left { position: sticky; top: 140px; }
   .about-name { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 0.95; color: #1A1A17; margin-top: 16px; }
-  .about-quote { font-size: 21px; font-style: italic; color: #1A1A17; line-height: 1.6; font-weight: 300; border-left: 2px solid var(--gold); padding-left: 24px; margin-bottom: 32px; }
+  .about-quote { font-size: 21px; font-style: normal; color: #1A1A17; line-height: 1.6; font-weight: 300; border-left: 2px solid var(--gold); padding-left: 24px; margin-bottom: 32px; }
   .about-video-wrap { width: 100%; aspect-ratio: 9/16; max-height: 480px; overflow: hidden; }
   .about-video-wrap iframe { width: 100%; height: 100%; border: none; display: block; }
   .about-right p { font-size: 19px; line-height: 1.9; color: #2E2C28; margin-bottom: 28px; }
@@ -197,19 +194,19 @@
   .session-dur { font-size: 12px; letter-spacing: 0.2em; text-transform: uppercase; color: var(--ember); margin-bottom: 16px; }
   .session-for { font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--gold); margin-bottom: 18px; line-height: 1.5; }
   .session-desc { font-size: 17px; color: var(--text-body); line-height: 1.85; margin-bottom: 18px; }
-  .session-outcomes { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; font-style: italic; }
+  .session-outcomes { font-size: 16px; color: var(--text-muted); line-height: 1.8; margin-bottom: 36px; font-style: normal; }
   .session-book { font-size: 12px; letter-spacing: 0.25em; text-transform: uppercase; color: var(--gold); background: none; border: none; padding: 0; transition: color 0.3s; }
   .session-book:hover { color: var(--ember); }
 
   /* VOICE IN OFFERINGS */
   .offerings-voice { margin-top: 64px; background: var(--void-card); padding: 48px; border-left: 2px solid var(--ember); }
   .offerings-voice-mark { font-size: 72px; line-height: 0.6; color: rgba(196,154,60,0.2); display: block; margin-bottom: 16px; }
-  .offerings-voice-text { font-size: 20px; font-style: italic; line-height: 1.85; color: var(--text-body); margin-bottom: 20px; }
+  .offerings-voice-text { font-size: 20px; font-style: normal; line-height: 1.85; color: var(--text-body); margin-bottom: 20px; }
   .offerings-voice-name { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
 
   /* PRICING */
   #pricing { background: var(--void-mid); }
-  .pricing-intro { font-size: 19px; font-style: italic; color: var(--text-body); max-width: 600px; line-height: 1.8; margin: 24px 0 16px; }
+  .pricing-intro { font-size: 19px; font-style: normal; color: var(--text-body); max-width: 600px; line-height: 1.8; margin: 24px 0 16px; }
   .pricing-tables { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; margin-top: 56px; }
   .pricing-table-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gold); margin-bottom: 16px; letter-spacing: 0.04em; }
   .pricing-tiers { display: flex; flex-direction: column; gap: 2px; }
@@ -233,7 +230,7 @@
   .voice-card.featured { background: var(--ember); }
   .quote-mark { font-size: 100px; line-height: 0.6; color: rgba(196,154,60,0.2); display: block; margin-bottom: 16px; }
   .voice-card.featured .quote-mark { color: rgba(242,237,228,0.25); }
-  .voice-text { font-size: 20px; font-style: italic; line-height: 1.85; color: var(--text-body); margin-bottom: 28px; }
+  .voice-text { font-size: 20px; font-style: normal; line-height: 1.85; color: var(--text-body); margin-bottom: 28px; }
   .voice-card.featured .voice-text { color: var(--text-bright); }
   .voice-name { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
   .voice-card.featured .voice-name { color: rgba(242,237,228,0.85); }
@@ -244,7 +241,7 @@
   .circle-body p { font-size: 19px; line-height: 1.9; color: #2E2C28; margin-bottom: 24px; }
   .circle-form-wrap { background: var(--void); padding: 48px; }
   .circle-form-title { font-family: 'Bebas Neue', sans-serif; font-size: 36px; color: var(--text-bright); margin-bottom: 8px; }
-  .circle-form-sub { font-size: 17px; font-style: italic; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7; }
+  .circle-form-sub { font-size: 17px; font-style: normal; color: var(--text-muted); margin-bottom: 32px; line-height: 1.7; }
 
   /* NEWSLETTER */
   #newsletter { background: var(--void-mid); }
@@ -256,16 +253,20 @@
   .begin-bg { position: absolute; bottom: -60px; right: -20px; font-family: 'Bebas Neue', sans-serif; font-size: 240px; color: rgba(242,237,228,0.03); line-height: 1; pointer-events: none; user-select: none; }
   .begin-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: start; }
   .begin-actions { display: flex; flex-direction: column; gap: 12px; margin-top: 40px; }
-  ..begin-action-btn {
+.begin-action-btn {
   font-size: 13px;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.18em;
   text-transform: uppercase;
 
   background: #A8471A;
   color: #F2EDE4;
+
   border: none;
-  padding: 14px 28px;
+  padding: 16px 32px;
   transition: all 0.25s ease;
+
+  display: inline-block;
+  margin-top: 12px;
 }
   .begin-action-btn:hover {
   background: #C15A2E;
@@ -310,7 +311,7 @@
   footer { background: var(--void); border-top: 1px solid rgba(242,237,228,0.08); padding: 64px 0 40px; }
   .footer-inner { max-width: 1100px; margin: 0 auto; padding: 0 48px; display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 64px; margin-bottom: 48px; }
   .footer-logo { height: 80px; width: auto; display: block; margin-bottom: 20px; opacity: 0.9; }
-  .footer-tagline { font-size: 15px; font-style: italic; color: var(--text-muted); line-height: 1.8; }
+  .footer-tagline { font-size: 15px; font-style: normal; color: var(--text-muted); line-height: 1.8; }
   .footer-col-title { font-size: 12px; letter-spacing: 0.3em; text-transform: uppercase; color: var(--gold); margin-bottom: 20px; }
   .footer-links { list-style: none; display: flex; flex-direction: column; gap: 10px; }
   .footer-links a, .footer-links button { font-size: 16px; color: var(--text-muted); background: none; border: none; padding: 0; text-align: left; transition: color 0.3s; }
@@ -866,7 +867,9 @@ A discovery call is specifically for new clients. Those who have already begun t
   var io = new IntersectionObserver(function(entries){
     entries.forEach(function(entry){
       if(entry.isIntersecting){
-        var siblings = Array.from(entry.target.parentElement.querySelectorAll('.reveal'));
+        var siblings = Array.from(entry.target.parentElement.querySelectorAll('..reveal {
+  max-width: 520px;
+}'));
         setTimeout(function(){ entry.target.classList.add('visible'); }, siblings.indexOf(entry.target) * 80);
         io.unobserve(entry.target);
       }
