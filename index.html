@@ -257,7 +257,12 @@
   .session-book:hover { color: var(--ember); }
 
   /* VOICE IN OFFERINGS */
-  .offerings-voice { margin-top: 64px; background: var(--void-card); padding: 48px; border-left: 2px solid var(--ember); }
+  .offerings-voice {
+  margin-top: 64px;
+  background: var(--void-card);
+  padding: 48px;
+  border-left: 2px solid var(--ember);
+}
   .offerings-voice-mark { font-size: 72px; line-height: 0.6; color: rgba(196,154,60,0.2); display: block; margin-bottom: 16px; }
   .offerings-voice-text { font-size: 20px; font-style: normal; line-height: 1.85; color: var(--text-body); margin-bottom: 20px; }
   .offerings-voice-name { font-size: 12px; letter-spacing: 0.28em; text-transform: uppercase; color: var(--text-muted); }
@@ -703,6 +708,19 @@ background: transparent !important;
   font-size: 48px;
   opacity: 0.15;
 }
+
+}
+  @media (max-width: 768px) {
+
+  .offerings-voice {
+    margin-top: 24px;
+    padding: 28px 20px;
+  }
+
+  .offerings-voice-text {
+    font-size: 16px;
+    line-height: 1.7;
+  }
 
 }
 </style>
