@@ -226,7 +226,14 @@
   .step-title { font-family: 'Bebas Neue', sans-serif; font-size: 24px; color: var(--text-bright); margin-bottom: 10px; }
   .step-desc { font-size: 16px; color: var(--text-body); line-height: 1.8; }
 
-  .sessions-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 2px; }
+  .sessions-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 48px;
+
+  max-width: 1000px;
+  margin: 0 auto;
+}
   .session-card { background: var(--void-card); padding: 48px 36px; position: relative; overflow: hidden; transition: background 0.3s; }
   .session-card:hover { background: #32322E; }
   .session-top-bar { position: absolute; top: 0; left: 0; right: 0; height: 2px; background: var(--ember); transform: scaleX(0); transform-origin: left; transition: transform 0.4s; }
