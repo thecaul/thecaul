@@ -616,6 +616,41 @@ background: transparent !important;
 .sessions-grid a:not(.btn-primary):not(.btn-secondary):hover {
   background: #C94A3C !important;
 }
+  @media (max-width: 768px) {
+
+  /* 1. Containers fill screen properly */
+  .container {
+    max-width: 100%;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
+
+  /* 2. ALL grids stack */
+  .sessions-grid,
+  .how-grid,
+  .pricing-grid {
+    grid-template-columns: 1fr !important;
+  }
+
+  /* 3. Any flex rows stack */
+  .sessions-cta {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* 4. Fix button width on mobile */
+  .sessions-cta a {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+  }
+
+  /* 5. Prevent weird overflow */
+  section {
+    overflow-x: hidden;
+  }
+
+}
 </style>
 </head>
 <body>
