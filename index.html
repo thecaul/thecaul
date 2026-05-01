@@ -424,15 +424,18 @@
   .footer-legal { font-size: 13px; color: rgba(242,237,228,0.3); letter-spacing: 0.08em; }
 
   /* MOBILE */
-  @media(max-width:860px){
+  @media (max-width: 768px) {
     #site-nav { padding: 16px 24px; }
     .nav-links { gap: 20px; }
     .nav-logo-img { height: 52px; }
-    .container { padding: 0 24px; }
-   section { padding: 120px 0; }
-    .about-grid, .circle-grid, .newsletter-grid, .begin-grid, .pricing-tables { grid-template-columns: 1fr; gap: 40px; }
+    .container { padding: 0 20px; }
+   section { padding: 56px 0; }
+   .about-grid, .circle-grid, .newsletter-grid, .begin-grid, .pricing-tables {
+  grid-template-columns: 1fr;
+  gap: 28px;
+}
     .about-left { position: static; }
-   .how-grid, .voices-grid {{ grid-template-columns: 1fr; }
+   .how-grid, .voices-grid { grid-template-columns: 1fr; }
     .how-grid::before { display: none; }
     
     .footer-inner { grid-template-columns: 1fr; gap: 40px; }
@@ -442,7 +445,7 @@
   }/* Remove white form box */
 input, select, textarea {
   background: transparent !important;
-  border: none 
+  border: none; 
   border-bottom: 1px solid #A8471A;
   color: #F2EDE4;
   padding: 12px 0;
@@ -477,7 +480,6 @@ div[class*="calendly"] {
   background: transparent !important;
 }/* 🔥 FINAL FIX */
 form,
-
 .f-group,
 .retreat-block,
 background: transparent !important;
