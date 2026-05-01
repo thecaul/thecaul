@@ -651,6 +651,38 @@ background: transparent !important;
   }
 
 }
+  @media (max-width: 768px) {
+
+  /* 1. Let content actually use screen width */
+  .container {
+    max-width: 100%;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  /* 2. Give sections better vertical rhythm */
+  section {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+
+  /* 3. Fix offerings cards spacing */
+  .sessions-grid {
+    grid-template-columns: 1fr !important;
+    gap: 24px;
+  }
+
+  /* 4. Make cards feel less cramped */
+  .session-card {
+    padding: 28px 20px;
+  }
+
+  /* 5. Fix testimonials (what you're showing) */
+  .offerings-voice {
+    padding: 24px 20px;
+  }
+
+}
 </style>
 </head>
 <body>
