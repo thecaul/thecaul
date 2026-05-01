@@ -233,11 +233,9 @@
 }
 .sessions-grid {
   display: grid;
-  grid-template-columns: repeat(2, 320px);
+ grid-template-columns: repeat(2, minmax(320px, 1fr));
   gap: 48px;
-  justify-content: center;
-  
-}
+  }
 }
 .session-card {
   background: var(--void-card);
