@@ -347,10 +347,18 @@
   .contact-val { font-size: 17px; color: var(--text-body); transition: color 0.3s; }
   .contact-row:hover .contact-val { color: var(--text-bright); }
  .retreat-block {
-  margin-top: 80px;
+  margin: 80px auto 0 auto;
+  max-width: 680px;
   background: var(--void-mid);
   padding: 48px;
   border-left: 2px solid var(--ember);
+}
+  .retreat-title {
+  margin-bottom: 16px;
+}
+
+.retreat-text {
+  margin-bottom: 16px;
 }
   .retreat-title { font-family: 'Bebas Neue', sans-serif; font-size: 28px; color: var(--gold); margin-bottom: 12px; }
   .retreat-text { font-size: 17px; color: var(--text-body); line-height: 1.8; }
@@ -918,7 +926,8 @@ A discovery call is specifically for new clients. Those who have already begun t
 </section>
 
 <!-- BEGIN -->
-<div class="retreat-block reveal">
+<div class="container">
+  <div class="retreat-block reveal">
   <h3 class="retreat-title">Retreats & Private Groups</h3>
   <p class="retreat-text">
     If you are holding space for a group — a retreat, a container, a gathering — 
@@ -933,8 +942,10 @@ A discovery call is specifically for new clients. Those who have already begun t
       Inquire About Retreats
     </a>
   </p>
+  </div>
 </div>
-  <section id="begin">
+
+<section id="begin">
   <div class="begin-bg">BEGIN</div>
   <div class="container">
     <div class="begin-grid">
