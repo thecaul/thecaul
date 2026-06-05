@@ -764,6 +764,64 @@ background: transparent !important;
     font-size: 18px;
     margin-bottom: 4px;
 }
+  .circle-photo img {
+    width: 100%;
+    display: block;
+    opacity: 0.82;
+}
+  .circle-photo {
+    position: relative;
+}
+
+.circle-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(
+        circle at center,
+        rgba(184, 92, 42, 0.18),
+        transparent 70%
+    );
+    pointer-events: none;
+}
+  .circle-photo {
+    overflow: hidden;
+    border-radius: 4px;
+}
+
+.circle-photo img {
+    filter: contrast(0.95) brightness(0.92);
+    transition: all .4s ease;
+}
+  .circle-photo {
+    position: relative;
+    margin: 0 0 48px;
+    width: 100%;
+    height: 520px;
+    overflow: hidden;
+    border: 1px solid rgba(168, 71, 26, 0.35);
+    box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45);
+}
+
+.circle-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 58%;
+    display: block;
+    opacity: 0.82;
+    filter: brightness(0.62) contrast(1.12) saturate(0.82);
+}
+
+.circle-photo::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background:
+        radial-gradient(circle at center, rgba(184, 92, 42, 0.18), transparent 70%),
+        linear-gradient(to right, rgba(20, 20, 17, 0.15), rgba(20, 20, 17, 0.45));
+    pointer-events: none;
+}
 
 </style>
 </head>
@@ -1038,7 +1096,7 @@ The first circle will be intentionally small.
       <div>
     <div class="circle-form-wrap reveal" style="margin-top:40px;">
     <div class="circle-photo reveal">
-       <img src="circle-room.jpg" alt="An intimate circle space with floor cushions and candles">
+       <img src="./thecaul/circle-room.jpg" alt="An intimate circle space with floor cushions and candles">
     </div>
 
     <p class="circle-form-title">EXPRESS INTEREST</p>
