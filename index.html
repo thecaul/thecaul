@@ -725,6 +725,46 @@ background: transparent !important;
   }
 
 }
+    }
+
+.circle-photo {
+    margin: 48px 0 36px;
+    max-width: 620px;
+    overflow: hidden;
+    border: 1px solid rgba(168, 71, 26, 0.28);
+}
+
+.circle-photo img {
+    width: 100%;
+    display: block;
+    filter: brightness(0.72) contrast(1.08) saturate(0.82);
+}
+
+.circle-meta {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 18px 28px;
+    margin: 0 0 56px;
+    max-width: 620px;
+}
+
+.circle-meta p {
+    margin: 0;
+    font-size: 16px;
+    line-height: 1.6;
+    color: #E8E0D2;
+}
+
+.circle-meta span {
+    display: block;
+    font-family: Bebas Neue, sans-serif;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    color: #A8471A;
+    font-size: 18px;
+    margin-bottom: 4px;
+}
+
 </style>
 </head>
 <body>
@@ -976,16 +1016,16 @@ A discovery call is specifically for new clients. Those who have already begun t
         <p class="reveal">I know what it is to move through a world that was not made for you. I know what it is to sit in a men's circle and still feel unseen. This space exists because that experience deserves an answer.</p>
        <p class="reveal">You do not need to identify as queer to find yourself at home here. If something in you recognizes this space, trust that.</p>
        <p class="reveal" style="font-style:italic;">If something in you is already saying yes, listen.</p>
-        <p class="reveal" style="margin-top:40px;">
-The Circle gathers monthly in Richmond, Virginia and online.
-</p>
+<div class="circle-photo reveal">
+    <img src="thecaul/circle-room.jpg" alt="An intimate circle space with floor cushions and candles">
+</div>
 
-<p class="reveal">
-6–8 men. 90–120 minutes.
-</p>
-
-<p class="reveal">
-A space for honest conversation, reflection, witnessing, and connection.
+<div class="circle-meta reveal">
+    <p><span>Gathers monthly</span> Richmond, Virginia + online</p>
+    <p><span>Intimate space</span> 6–8 men</p>
+    <p><span>Time to go deep</span> 90–120 minutes</p>
+    <p><span>What we leave behind</span> No fixing. No performing. No pretending.</p>
+</div>
 </p>
 
 <p class="reveal">
