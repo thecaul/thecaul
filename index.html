@@ -795,19 +795,28 @@ background: transparent !important;
   object-fit: cover;
   object-position: center 78%;
   display: block;
-  filter: brightness(0.90) contrast(1.08) saturate(1.25);
-}
+  filter: brightness(0.82) contrast(1.08) saturate(1.35);
 #circle .circle-photo::after {
   content: '';
   position: absolute;
   inset: 0;
-background: linear-gradient(
-  to right,
-  rgba(32,20,12,0.92) 0%,
-  rgba(32,20,12,0.70) 28%,
-  rgba(32,20,12,0.32) 56%,
-  rgba(32,20,12,0.06) 82%
-);
+  pointer-events: none;
+
+  background:
+    radial-gradient(
+      circle at 45% 62%,
+      rgba(193, 90, 46, 0.22) 0%,
+      rgba(193, 90, 46, 0.10) 28%,
+      rgba(193, 90, 46, 0.00) 58%
+    ),
+    linear-gradient(
+      to right,
+      rgba(32, 20, 12, 0.58) 0%,
+      rgba(32, 20, 12, 0.36) 28%,
+      rgba(32, 20, 12, 0.14) 58%,
+      rgba(32, 20, 12, 0.00) 88%
+    );
+}
 }
 
 #circle .circle-body,
@@ -842,6 +851,21 @@ background: linear-gradient(
 #circle .circle-photo {
   grid-column: 2;
   grid-row: 1;
+}
+ @media (min-width: 769px) {
+  #letters::after {
+    right: 4%;
+    top: 210px;
+    width: 560px;
+    height: 560px;
+    opacity: 0.11;
+    z-index: 1;
+  }
+
+  #letters .newsletter-grid {
+    position: relative;
+    z-index: 2;
+  }
 }
 </style>
 </head>
