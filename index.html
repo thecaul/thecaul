@@ -913,6 +913,26 @@ background: transparent !important;
 
 
 }
+  @media (min-width: 769px) {
+  #letters::after {
+    display: none !important;
+  }
+
+  .letters-falcon {
+    position: absolute;
+    left: 38%;
+    top: 90px;
+    width: 760px;
+    opacity: 0.10;
+    z-index: 1;
+    pointer-events: none;
+  }
+
+  #letters .container {
+    position: relative;
+    z-index: 2;
+  }
+}
 </style>
 </head>
 <body>
@@ -1216,6 +1236,7 @@ If this speaks to something you've been searching for, let me know. I'll reach o
 
 <!-- NEWSLETTER -->
 <section id="letters">
+  <img src="./thecaul/Falcon Logo.png" class="letters-falcon" alt="">
   <div class="container">
     <div class="newsletter-grid">
       <div>
