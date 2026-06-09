@@ -206,7 +206,7 @@
   /* ABOUT */
   #about { background: var(--bone); }
   .about-grid { display: grid; grid-template-columns: 1fr 1.6fr; gap: 80px; align-items: start; }
-  .about-left { position: sticky; top: 140px; }
+  .about-left { position: relative; top: 140px; }
   .about-name { font-family: 'Bebas Neue', sans-serif; font-size: 64px; line-height: 0.95; color: #1A1A17; margin-top: 16px; }
   .about-quote { font-size: 21px; font-style: normal; color: #1A1A17; line-height: 1.6; font-weight: 300; border-left: 2px solid var(--gold); padding-left: 24px; margin-bottom: 32px; }
   .about-video-wrap { width: 100%; aspect-ratio: 9/16; max-height: 480px; overflow: hidden; }
@@ -920,6 +920,11 @@ background: transparent !important;
 #about img {
   position: relative;
   z-index: 1;
+}
+  #about .about-left,
+#about .about-image {
+  position: relative !important;
+  top: auto !important;
 }
 </style>
 </head>
