@@ -1,0 +1,242 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>The Caul | Men's Community in Richmond, VA</title>
+<meta name="description" content="The Caul is a men's community in Richmond, Virginia. A monthly men's circle and gatherings for men who want to remember themselves in the company of other men.">
+<link rel="canonical" href="https://thecaul.com/">
+<meta property="og:title" content="The Caul | Men's Community in Richmond, VA">
+<meta property="og:description" content="A monthly men's circle and gatherings for men in Richmond, Virginia.">
+<meta property="og:url" content="https://thecaul.com/">
+<meta property="og:image" content="https://thecaul.com/thecaul/CAUL.PNG">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --void:#0F0D0B;
+  --void-2:#181512;
+  --bone:#F0EBE1;
+  --ember:#7A3518;
+  --ember-light:#A8471A;
+  --gold:#C4A04A;
+  --muted:rgba(240,235,225,.72);
+  --line:rgba(240,235,225,.16);
+  --head:"Bebas Neue","Arial Narrow",sans-serif;
+  --body:"Cormorant Garamond",Georgia,serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-behavior:smooth;scroll-padding-top:70px}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}}
+body{margin:0;background:var(--void);color:var(--bone);font-family:var(--body);font-size:20px;line-height:1.7;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--ember-light);outline-offset:3px}
+
+/* nav */
+.bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:10;background:var(--void);border-bottom:1px solid var(--line)}
+.bar-in{max-width:1120px;margin:0 auto;padding:14px 22px;display:flex;align-items:center;gap:20px;flex-wrap:wrap}
+.mark{font-family:var(--head);font-size:26px;letter-spacing:.06em;text-decoration:none}
+.nav{display:flex;gap:22px;margin-left:auto;flex-wrap:wrap}
+.nav a{font-family:var(--head);font-size:18px;letter-spacing:.12em;text-decoration:none;opacity:.85}
+.nav a:hover{opacity:1}
+@media (max-width:640px){.bar-in{justify-content:center}.nav{margin-left:0;justify-content:center;gap:16px}.mark{width:100%;text-align:center}}
+
+.btn{display:inline-block;background:var(--ember);color:var(--bone);font-family:var(--head);font-size:20px;letter-spacing:.1em;text-decoration:none;padding:14px 28px}
+.btn:hover{background:var(--ember-light)}
+.btn-line{display:inline-block;border:1px solid var(--bone);color:var(--bone);font-family:var(--head);font-size:20px;letter-spacing:.1em;text-decoration:none;padding:13px 27px}
+.btn-line:hover{background:var(--bone);color:var(--void)}
+
+/* hero */
+.hero{min-height:78vh;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:64px 22px}
+.hero img{width:min(420px,80vw);margin-bottom:28px}
+.hero p{font-style:italic;font-size:clamp(22px,3vw,30px);max-width:26ch;margin:0 0 20px}
+.hero .where{font-family:var(--head);font-style:normal;font-size:18px;letter-spacing:.2em;color:var(--muted);margin-bottom:36px}
+
+/* sections */
+.sec{padding:88px 22px;border-top:1px solid var(--line)}
+.sec.alt{background:var(--void-2)}
+.wrap{max-width:1120px;margin:0 auto}
+.eyebrow{font-family:var(--head);font-size:18px;letter-spacing:.2em;color:var(--ember-light);margin:0 0 8px}
+h2{font-family:var(--head);font-weight:400;font-size:clamp(48px,7vw,84px);line-height:.95;margin:0 0 32px;letter-spacing:.01em}
+h3{font-family:var(--head);font-weight:400;font-size:40px;line-height:1;margin:0 0 12px;letter-spacing:.02em}
+.prose p{margin:0 0 1.1em;max-width:62ch}
+.lede{font-style:italic;font-size:24px;color:var(--bone)}
+.tag{font-style:italic;color:var(--ember-light);font-size:22px;margin:0 0 18px}
+
+.two{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:start}
+@media (max-width:860px){.two{grid-template-columns:1fr;gap:32px}}
+
+.video{position:relative;aspect-ratio:9/16;max-width:360px;background:var(--void-2)}
+.video iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+
+.prices{list-style:none;padding:0;margin:28px 0 32px;border-top:1px solid var(--line)}
+.prices li{display:flex;justify-content:space-between;gap:16px;padding:14px 0;border-bottom:1px solid var(--line)}
+.prices span:first-child{font-family:var(--head);font-size:20px;letter-spacing:.1em}
+.prices span:last-child{font-family:var(--head);font-size:24px;color:var(--bone)}
+
+.event{padding:40px 0;border-top:1px solid var(--line)}
+.event:first-of-type{border-top:0;padding-top:0}
+.status{display:inline-block;background:var(--ember);color:var(--bone);font-family:var(--head);font-size:18px;letter-spacing:.12em;padding:4px 12px;margin-bottom:14px}
+.when{font-family:var(--head);font-size:20px;letter-spacing:.12em;color:var(--muted);margin:0 0 14px}
+.flyer{max-width:420px}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding:56px 22px 40px}
+.foot{max-width:1120px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:32px}
+.foot h4{font-family:var(--head);font-weight:400;font-size:18px;letter-spacing:.2em;color:var(--ember-light);margin:0 0 10px}
+.foot p{margin:0 0 6px;font-size:18px}
+.foot .tagline{font-style:italic;font-size:20px}
+.fine{max-width:1120px;margin:32px auto 0;padding-top:18px;border-top:1px solid var(--line);font-size:15px;color:var(--muted)}
+@media (max-width:760px){.foot{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+
+<header class="bar">
+  <div class="bar-in">
+    <a class="mark" href="#top">THE CAUL</a>
+    <nav class="nav" aria-label="Sections">
+      <a href="#about">About</a>
+      <a href="#circle">The Circle</a>
+      <a href="#happenings">Happenings</a>
+      <a href="#letters">The Letters</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+<section class="hero">
+  <img src="thecaul/CAUL.PNG" alt="The Caul">
+  <p>Before the armor. Before the performance. You were you.</p>
+  <div class="where">A men's community in Richmond, Virginia</div>
+  <a class="btn" href="#circle">Join the Circle</a>
+</section>
+
+<section class="sec" id="community">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">The Community</p>
+      <h2>WHAT THE CAUL IS</h2>
+    </div>
+    <div class="prose">
+      <p class="lede">A remembering space for men.</p>
+      <p>The Caul exists to create meaningful spaces for men to gather, learn, practice presence, and remember themselves in the company of other men.</p>
+      <p>This is not a lecture. It is not therapy. It is a room where you can arrive as you are, sit with other men, and put down some of what you have been carrying alone.</p>
+      <p>The Caul is one room for men who are safe and ready to do the work, whoever they are and whoever they love.</p>
+      <p>The Circle is the heart of it. Other gatherings grow around it, and more will come as the community grows.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="about">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">The Founder</p>
+      <h2>JOSHUA<br>CAMPBELL</h2>
+      <p class="tag">“I facilitate from inside my own ongoing search. Not from a place of completion.”</p>
+      <div class="video">
+        <iframe src="https://player.vimeo.com/video/1176363298?autoplay=1&loop=1&muted=1&background=1" title="Joshua Campbell" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen></iframe>
+      </div>
+    </div>
+    <div class="prose">
+      <p>For nineteen years I have worked behind the chair as a hairstylist. The men who found their way to me were a handful, loyal and consistent, and they stayed because something in that room felt safe. Not soft. Safe. There is a difference. Most men never walk through the door at all. Not because they don’t need the space, but because they have been taught that needing space makes them less of a man.</p>
+      <p>I know that teaching intimately. I lived inside it.</p>
+      <p>The masculine tried to make me disappear. It told me I wasn’t enough. Wasn’t man enough. Didn’t belong. It did what it does to so many of us: handed me a version of myself that was smaller than the truth and asked me to call it home.</p>
+      <p>I didn’t. I refused to be small for others’ comfort.</p>
+      <p>I found my way back to myself anyway. Not because someone held the door open for me, but because I refused to stop looking for it. I remembered who I am. I found my way back to my lineage, to something older and truer than anything the modern world had handed me about what a man is supposed to be.</p>
+      <p>That remembering is what The Caul is built on.</p>
+      <p>I am a shamanic practitioner based in Richmond, Virginia. My work first cracked open in Tulum, and my formal training took me to Portugal. I am not teaching from a mountaintop. I am walking the path myself.</p>
+      <p>This work is not about fixing men. It is about witnessing them. That is how we return the masculine. Not alone. Not through performance. In the presence of men willing to remember together.</p>
+      <p style="color:var(--muted);font-size:18px">Looking for one-on-one work with Joshua? Journeywork, soul retrieval and centering sessions now live at <a href="https://currentbyjoshua.com/#shamanic">CURRENT</a>.</p>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="circle">
+  <div class="wrap two">
+    <div>
+      <img class="flyer" src="thecaul/CAULCircle.png" alt="The Caul Men's Circle flyer">
+    </div>
+    <div class="prose">
+      <p class="eyebrow">The Circle</p>
+      <h2>THE CAUL MEN'S CIRCLE</h2>
+      <p class="tag">Rooted men. Honest conversation. Shared practice.</p>
+      <p>The Circle is a monthly gathering for men seeking deeper connection, accountability, and community.</p>
+      <p class="when">Fourth Sunday of every month · 2PM · Richmond, VA</p>
+      <p>Location is announced each month.</p>
+      <ul class="prices">
+        <li><span>Single gathering</span><span>$22</span></li>
+        <li><span>Monthly membership</span><span>$55</span></li>
+        <li><span>Annual membership</span><span>$444</span></li>
+      </ul>
+      <p>Membership includes every Circle and other member gatherings. It supports circles, guest facilitators, workshops, retreats, and the ongoing work of stewarding a living community. Retreats and workshops may carry an additional cost.</p>
+      <p>If this speaks to something you have been searching for, let me know. I’ll reach out personally with details about the next gathering.</p>
+      <a class="btn" href="https://lettersfromthecaul.myflodesk.com/circle" target="_blank" rel="noopener">Request an Invitation</a>
+    </div>
+  </div>
+</section>
+
+<section class="sec alt" id="happenings">
+  <div class="wrap">
+    <p class="eyebrow">Happenings</p>
+    <h2>GATHERINGS</h2>
+
+    <div class="event two">
+      <div>
+        <img class="flyer" src="thecaul/The%20Caul,%20MensCommunity2.PNG" alt="Cool Bonsai Bro flyer">
+      </div>
+      <div class="prose">
+        <span class="status">ON PAUSE · WE'RE FIGURING IT OUT</span>
+        <h3>COOL BONSAI BRO</h3>
+        <p>A men’s gathering hosted with Apothec, a Richmond perfumery and tea shop. We tend bonsai, share tea, and spend time with something living that does not ask us to perform.</p>
+        <p>Cool Bonsai Bro is on pause while we figure out how it runs best.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="letters">
+  <div class="wrap two">
+    <div>
+      <p class="eyebrow">Falcon Letters</p>
+      <h2>THE LETTERS</h2>
+      <a class="btn" href="https://lettersfromthecaul.myflodesk.com/thecaul" target="_blank" rel="noopener">Receive the Letters</a>
+    </div>
+    <div class="prose">
+      <p class="lede">These are not newsletters.</p>
+      <p>They are letters. Written by a man, for men, about the things we were never given language for.</p>
+      <p>What it costs to carry everything. What breaks when we finally stop. What waits on the other side of the performance. How a man finds his way back to himself when no one ever showed him the road.</p>
+      <p>If you are a man who has been carrying something you cannot name, this is for you.</p>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="foot">
+    <div>
+      <p class="mark" style="margin-bottom:10px">THE CAUL</p>
+      <p class="tagline">Before the armor.<br>Before the performance.<br>You were you.</p>
+    </div>
+    <div>
+      <h4>Connect</h4>
+      <p><a href="mailto:hello@thecaul.com">hello@thecaul.com</a></p>
+      <p><a href="https://instagram.com/thecaul_" target="_blank" rel="noopener">@thecaul_</a></p>
+    </div>
+    <div>
+      <h4>One-on-one work</h4>
+      <p><a href="https://currentbyjoshua.com/#shamanic">CURRENT by Joshua</a></p>
+    </div>
+  </div>
+  <p class="fine">© 2026 The Caul, Richmond, Virginia</p>
+</footer>
+
+</body>
+</html>
